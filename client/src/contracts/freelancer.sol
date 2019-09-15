@@ -4,6 +4,7 @@ contract freelancer{
     struct work{
         uint id;
         string name;
+        string des;
         address payable owner;
         bool purchased;
     }
@@ -31,6 +32,7 @@ contract freelancer{
     event workCreated(
         uint id,
         string name,
+        string des,
         address payable owner,
         bool purchased
     );
@@ -54,10 +56,10 @@ contract freelancer{
         address payable bidder
         );
     
-    function createWork(string memory _name)public{
-        works[workCount]=work(workCount,_name,msg.sender,false);
+    function createWork(string memory _name,string memory _des)public{
+        works[workCount]=work(workCount,_name,_des,msg.sender,false);
         workCount++;
-        emit workCreated(workCount,_name,msg.sender,false);
+        emit workCreated(workCount,_name,_des,msg.sender,false);
     }
 
     function createBid( uint _checkid,string memory _name, string memory _message, uint _time, uint _price) public{

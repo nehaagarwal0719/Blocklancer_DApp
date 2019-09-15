@@ -70,9 +70,9 @@ async loadweb3(){
   //this.purchaseProduct = this.purchaseProduct.bind(this)
   }
 
-createWork(name) {
+createWork(name,des) {
     this.setState({ loading: true })
-    this.state.Freelancer.methods.createWork(name).send({ from: this.state.account })
+    this.state.Freelancer.methods.createWork(name,des).send({ from: this.state.account })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })

@@ -16,10 +16,11 @@ class Main extends Component{
           <form onSubmit={(event) => {
             event.preventDefault()
             const name = this.workName.value
-            
-            this.props.createWork(name)
+            const des = this.workDes.value
+            this.props.createWork(name,des)
            }}>
           <div className="form-group mr-sm-2">
+            <div>
             <input
               id="workName"
               type="text"
@@ -27,6 +28,16 @@ class Main extends Component{
               className="form-control"
               placeholder="Work Name"
             required />
+            </div>
+            <div>
+             <input
+              id="workDes"
+              type="text"
+              ref={(input) => { this.workDes = input }}
+              className="form-control"
+              placeholder="Work Description"
+            required />
+            </div>
           </div>
           <button type="submit" className="btn btn-primary">Add Work</button>
             </form>
@@ -37,6 +48,7 @@ class Main extends Component{
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
+                  <th scope="col">Description</th>
                   <th scope="col">Owner</th>
                   <th scope="col"></th>
                </tr>             
@@ -50,6 +62,7 @@ class Main extends Component{
                         <th scope="row">{work.id.toString()}</th>
                          
                         <td>{work.name}</td>
+                        <td>{work.des}</td>
                         <td>{work.owner}</td>
                         <td>
                         { !work.purchased
