@@ -12,6 +12,7 @@ class Main extends Component{
       <Route path="/bid"  component={Bid}/>
       </div>
        <div id="content">
+       <h1>Add work</h1>
           <form onSubmit={(event) => {
             event.preventDefault()
             const name = this.workName.value
@@ -37,7 +38,6 @@ class Main extends Component{
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
                   <th scope="col">Owner</th>
-                  <th scope="col">purchased</th>
                   <th scope="col"></th>
                </tr>             
 
@@ -51,7 +51,6 @@ class Main extends Component{
                          
                         <td>{work.name}</td>
                         <td>{work.owner}</td>
-                        <td>{work.purchased.toString()}</td>
                         <td>
                         { !work.purchased
                           ? <button>

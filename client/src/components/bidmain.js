@@ -10,7 +10,7 @@ class BidMain extends Component{
     return(
 
       <div id="content">
-          {this.props.cidd}
+      
             <form onSubmit={(event) => {
                 event.preventDefault()
                 const checkid =this.props.cidd

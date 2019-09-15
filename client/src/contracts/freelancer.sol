@@ -95,6 +95,7 @@ contract freelancer{
          _work.purchased = true;
          //update the product
          bids[_id]=_bid;
+         works[work_id]=_work;
          //pay the seller through ether
          address(_seller).transfer(msg.value);
          //trigger an event
