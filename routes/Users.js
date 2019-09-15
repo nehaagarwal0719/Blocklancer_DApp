@@ -16,6 +16,7 @@ users.post('/register', (req, res) => {
     lname: req.body.lname,
     email: req.body.email,
     password: req.body.password,
+    address:req.body.address,
     created: today
   }
 
